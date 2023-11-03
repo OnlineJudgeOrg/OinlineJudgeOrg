@@ -3,40 +3,44 @@ package javaTest;
 import java.util.*;
 import java.io.*;
 
-public class Main{
+public class bj_2231{
     public static void main(String args[]) throws IOException{
     	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    	String inputStr = br.readLine(); // 자릿수를 확인하기 위해 String으로 입력 받음.
+        int num = Integer.parseInt(inputStr);
+        
+        int result = 0; // 답이 없을 경우 0을 출력
+        
+        for(int i=num; i>0; i--) {
+        	String iStr = Integer.toString(i);
+        	//System.out.println("iStr : " + iStr);
+        	int constructedNum = constructorNumber(iStr);
+        	//System.out.println("constructedNum : " + constructedNum);
+        	if(constructedNum == num) {
+        		result = i;
+        	}
+        }
     	
-    	String[] nm = br.readLine().split(" ");
-    	int n = Integer.parseInt(nm[0]); // 입력 받을 수의 개수
-    	int m = Integer.parseInt(nm[1]); // 타겟 숫자
-    	
-    	ArrayList<Integer> inputs = new ArrayList<>();
-    	
-    	StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-    	for(int i=0; i<n; i++) {
-    		inputs.add(Integer.parseInt(st.nextToken()));
-    	}
-    	
-    	int result = 0;
-    	// 완전탐색을 활용해서 3중 for문으로 돌린다.
-    	for(int i=0; i<n-2; i++) {
-    		for(int j=i+1; j<n-1; j++) {
-    			for(int k=j+1; k<n; k++) {
-    				int tmp = inputs.get(i) + inputs.get(j) + inputs.get(k);
-    				
-    				if (tmp == m) {
-    					result = m;
-    					break;
-    				}else if (result < tmp && tmp < m) {
-    					result = tmp;
-    				}
-    				
-    			}
-    		}
-    	}
     	System.out.println(result);
-    
+    	
+    }
+    public static int constructorNumber(String inputStr) {
+    	int length = inputStr.length(); // 한자리씩 확인하기 위해 10의 n승 값을 구한다.
+    	
+    	int n = Integer.parseInt(inputStr);
+    	
+    	int constructedNum = n;
+    	
+    	for(int i=length; i>0; i--) {
+    		
+    		int index = i-1;
+    		int divisor = (int) Math.pow(10, index);
+    		//System.out.println("div  : " + n/div);
+    		constructedNum += (n/divisor);
+    		n = n%divisor;
+    		//System.out.println("constructor  : " + constructor);
+    	}
+    	return constructedNum;
     }
 }
 
