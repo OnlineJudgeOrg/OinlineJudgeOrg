@@ -1,4 +1,4 @@
-package JinSuSong;
+package javaTest;
 
 import java.util.*;
 import java.io.*;
