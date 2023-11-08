@@ -10,7 +10,7 @@ public class BOJ2587_Median {
     public static void main (String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
+        // test_sh 1st commit
         Integer[] numbers = new Integer[5];
         int sum = 0;
         for (int i = 0; i < 5; i++){
