@@ -12,6 +12,7 @@ public class bj_1436 {
 		int n = Integer.parseInt(br.readLine());
 		// git test song 
 		// giy test2 song 
+		// git test3 song 
 		int cnt = 0; // 666이 포함된 숫자 
 		String target_str = "666";
 		int target_int = Integer.parseInt(target_str);
