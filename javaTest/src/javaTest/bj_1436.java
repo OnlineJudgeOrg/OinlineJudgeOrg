@@ -11,7 +11,7 @@ public class bj_1436 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
 		// git test song 
-		// test
+		// giy test2 song 
 		int cnt = 0; // 666이 포함된 숫자 
 		String target_str = "666";
 		int target_int = Integer.parseInt(target_str);
