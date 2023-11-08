@@ -20,11 +20,12 @@ public class BOJ2587_Median {
         Arrays.sort(numbers);
         int avg = sum/5;
         bw.write(avg + "\n");
-        bw.write(numbers[2] + "\n");
+        bw.write(numbers[2] + "\n"); //정렬 후 중간인 2번 인덱스에 저장된 값이 중앙값임.
         bw.flush();
         bw.close();
 
     }
 
 }
+
 
