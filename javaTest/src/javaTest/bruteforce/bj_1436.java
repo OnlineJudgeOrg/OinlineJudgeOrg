@@ -1,4 +1,4 @@
-package javaTest;
+package javaTest.bruteforce;
 
 
 import java.io.BufferedReader;
