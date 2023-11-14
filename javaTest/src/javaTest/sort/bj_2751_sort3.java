@@ -1,4 +1,4 @@
-package javaTest;
+package javaTest.sort;
 
 import java.util.*;
 import java.io.*;

@@ -1,4 +1,4 @@
-package javaTest;
+package javaTest.setmap;
 
 import java.util.*;
 import java.io.*;
