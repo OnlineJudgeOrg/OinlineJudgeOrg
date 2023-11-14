@@ -35,7 +35,7 @@
 ## 📌 브루트포스
 
 
-- 블랙잭 : [이수현]()  [송진수]()
+- 블랙잭 : [이수현](https://github.com/OnlineJudgeOrg/OnlineJudgeOrg/blob/main/javaTest/src/ShSeanLee/BOJ25035_Cutline.java)  [송진수]()
 - [분해합]
 - [수학은 비대면강의입니다]
 - [체스판 다시 칠하기]
