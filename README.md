@@ -35,7 +35,7 @@
 ## 📌 브루트포스
 
 
-- 블랙잭 : [이수현]([https://github.com/OnlineJudgeOrg/OnlineJudgeOrg/blob/main/javaTest/src/ShSeanLee/BOJ25035_Cutline.java](https://github.com/OnlineJudgeOrg/OnlineJudgeOrg/blob/main/javaTest/src/ShSeanLee/BOJ25035_Cutline.java))  [송진수](https://github.com/OnlineJudgeOrg/OnlineJudgeOrg/blob/main/javaTest/src/javaTest/sort/bj_25305_cutoffscore.java)
+- 블랙잭 : [이수현]([https://github.com/OnlineJudgeOrg/OnlineJudgeOrg/blob/main/javaTest/src/ShSeanLee/BOJ25035_Cutline.java](https://github.com/OnlineJudgeOrg/OnlineJudgeOrg/blob/main/javaTest/src/ShSeanLee/BOJ25035_Cutline.java))  [송진수](https://zrr.kr/BIx5)
 - [분해합]
 - [수학은 비대면강의입니다]
 - [체스판 다시 칠하기]
