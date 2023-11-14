@@ -35,7 +35,7 @@
 ## 📌 브루트포스
 
 
-- 블랙잭 : [이수현]([https://github.com/OnlineJudgeOrg/OnlineJudgeOrg/blob/main/javaTest/src/ShSeanLee/BOJ25035_Cutline.java](https://github.com/OnlineJudgeOrg/OnlineJudgeOrg/blob/main/javaTest/src/ShSeanLee/BOJ25035_Cutline.java))  [송진수](https://zrr.kr/BIx5)
+- 블랙잭 : [이수현]([https://github.com/OnlineJudgeOrg/OnlineJudgeOrg/blob/main/javaTest/src/ShSeanLee/BOJ25035_Cutline.java](https://github.com/OnlineJudgeOrg/OnlineJudgeOrg/blob/main/javaTest/src/ShSeanLee/BOJ25035_Cutline.java))  [송진수]()
 - [분해합]
 - [수학은 비대면강의입니다]
 - [체스판 다시 칠하기]
@@ -45,4 +45,4 @@
 ## 📌 정렬
 - [수 정렬하기]
 - [대표값2]
-- 커트라인 25305 : [이수현](), [송진수]()
+- 커트라인 25305 : [이수현](), [송진수](https://zrr.kr/BIx5)
