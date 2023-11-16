@@ -13,29 +13,35 @@ import java.io.*;
 public class bj_7785_CompanyPeopleStatus{
     public static void main(String args[]) throws IOException{
     	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    	
     	int n = Integer.parseInt(br.readLine());
-    	HashMap map = new HashMap<String, String>();
+    	
+    	HashMap<String,Integer> hMap = new HashMap<String, Integer>();
     	
     	for(int i=0; i<n; i++) {
     		String[] inputs = br.readLine().split(" ");
-    		String name = inputs[0];
-    		String status = inputs[1];
-    		
-    		if(status.equals("enter")) {
-    			map.put(name, status);
-    		}else { // leave
-    			if(map.containsKey(name)) {
-    				map.remove(name);
-    			}
+    		String key = inputs[0];
+    		if(hMap.get(key) != null) {
+    			hMap.remove(key);
+    		}else {
+    			hMap.put(key, 0);
     		}
     	}
-    	//System.out.println(map);
-    	ArrayList<String> list =  new ArrayList<String>( map.keySet());
-    	Collections.sort(list, Collections.reverseOrder());
-    	for(String key : list) {
-    		System.out.println(key);
+    	
+    	//System.out.println(hMap.keySet());
+    	ArrayList<String> list = new ArrayList<>(hMap.keySet());
+    	
+    	Collections.sort(list, new Comparator<String>() {
+    		@Override
+    		public int compare(String o1, String o2) {
+    			return -(o1.compareTo(o2));
+    		}
+    	});
+    	
+    	StringBuilder sb = new StringBuilder();
+    	for(int i=0; i<list.size(); i++) {
+    		sb.append(list.get(i)).append('\n');
     	}
+    	System.out.println(sb);
     }
 }
 
