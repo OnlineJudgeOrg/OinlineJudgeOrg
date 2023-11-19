@@ -3,7 +3,7 @@ package javaTest.sort;
 import java.util.*;
 import java.io.*;
 //10,000,000, 메모리 512일 경우, ArrayList를 사용하면 메모리 초과 발생
-public class bj_2751_sort3{
+public class bj_10989_sort3{
     public static void main(String args[]) throws IOException{
     	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     	//BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
