@@ -6,14 +6,14 @@ import java.io.IOException;
 import java.io.BufferedWriter;
 import java.io.OutputStreamWriter;
 import java.util.Arrays;
-public class BOJ2751_SortingNumbers2 {
+public class BOJ2751_SortingNumbers2 { // sort를 쓰는 방법 매우느림 (2572ms)
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int N = Integer.parseInt(br.readLine());
 //        String[] str = br.readLine().split("\n");
-        Integer[] numbers = new Integer[N];
+        Integer[] numbers = new Integer[N]; // int로 돌리는것 - 1764ms, 1560ms - int로 웬만하면 됨, ArrayList제외
 
 
 
