@@ -47,6 +47,7 @@ public class BOJ10815_NumberCard {
         bw.close();
     }
 }
+// Hash map과 Binary search의 관계
 
 // 정답 - Hashmap을 이용한 풀이
 // https://velog.io/@leetaekyu2077/%EC%9E%90%EB%B0%94-HashMap-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0-BOJ-10815-%EC%88%AB%EC%9E%90-%EC%B9%B4%EB%93%9C
