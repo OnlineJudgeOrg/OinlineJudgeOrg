@@ -26,7 +26,7 @@ public class BOJ10814_OrderByAge {
             public int compare(String[] o1, String[] o2) {
                 if(o1[0].equals(o2[0])){ // 나이가 같으면,
                     return Integer.parseInt(o1[2]) - Integer.parseInt(o2[2]); // 순번으로 비교
-                } else {
+                } else { // 기본은 나이로 비교
                     return Integer.parseInt(o1[0]) - Integer.parseInt(o2[0]);
                 }
             }
