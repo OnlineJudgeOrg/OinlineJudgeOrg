@@ -53,6 +53,8 @@ public class bj_1620_PokemonMaster{
     	}
     	System.out.println(sb);
     }
+    
+    // 주요 코드
     public static boolean isNumber(String input) {
     	boolean result = false;
     	
