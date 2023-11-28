@@ -29,10 +29,10 @@ public class BOJ1764_Unknown { // ArrayList 두개를 만들어서 했을 때는
             set2.add(br.readLine());
         }
 
-//        list1.retainAll(list2);
-        set1.retainAll(set2);
+//        list1.retainAll(list2); // 리스트일때도 동일한 메서드 사용
+        set1.retainAll(set2); // 교집합 - 첫번째 객체 자체가 교집합의 결과값으로 변경되는 것에 유의
 //        Collections.sort(list1);
-        ArrayList<String> al = new ArrayList<>(set1);
+        ArrayList<String> al = new ArrayList<>(set1); // hashset을 바로 정렬 못하므로 리스트로 변환 먼저 진행(
 //        Collections.sort(al);
         Collections.sort(al, new Comparator<String>(){ // sort 오버라이드 연습
             @Override

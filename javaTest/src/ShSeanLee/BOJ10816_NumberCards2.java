@@ -27,7 +27,7 @@ public class BOJ10816_NumberCards2 {
             if(map.get(tmp2) == null){ // null이면 0으로 바꿈
                 sb.append(0).append(" ");
             }else{
-                sb.append(map.get(tmp2)).append(" ");
+                sb.append(map.get(tmp2)).append(" "); // 그 갯수만큼 출력
             }
         }
         System.out.println(sb);
