@@ -17,10 +17,12 @@ public class bj_1735_FractionAdder {
 	public static void main(String[] args)throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
+		// 분수 1 입력 받기
 		String[] input1 = br.readLine().split(" ");
 		int A = Integer.parseInt( input1[0] );
 		int B = Integer.parseInt( input1[1] );
 		
+		// 분수 2 입력 받기
 		String[] input2 = br.readLine().split(" ");
 		int C = Integer.parseInt( input2[0] );
 		int D = Integer.parseInt( input2[1] );
