@@ -21,17 +21,21 @@ public class bj_13241_LeastCommonMultiple {
 	public static void main(String[] args)throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
+		// a,b 입력 받기
 		String[] inputs = br.readLine().split(" ");
 		long a = Integer.parseInt(inputs[0]);
 		long b = Integer.parseInt(inputs[1]);
 		
+		// 최대공약수 구하기
 		long gcd = GCD(a,b);
-//		System.out.println(gcd);
+		
+		// 최소공배수 = a*b / 최대공약수
 		long lcm = (a*b)/gcd;
 		System.out.println(lcm);
 		
 	}
 	
+	// 최대공약수 while문으로 풀이
 	public static long GCD(long a, long b) {
 		while( b != 0) {
 			long r = a%b ;
