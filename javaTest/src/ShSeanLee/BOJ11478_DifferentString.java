@@ -10,8 +10,8 @@ public class BOJ11478_DifferentString {
         HashSet<String> set = new HashSet<>();
 
         for (int i = 1; i < str.length() + 1; i++) { // 부분집합의 길이
-            for (int j = 0; j < str.length() - i + 1; j++) {
-                set.add(str.substring(j, j+i));
+            for (int j = 0; j < str.length() - i + 1; j++) { // 문자열을 끝까지 탐색 ex: i=2일때(부분집합의 길이가 2), 5의 문자열 길이에서 4까지 탐색함.
+                set.add(str.substring(j, j+i)); // 마지막을 포함하지 않으므로 +1
             }
         }
 

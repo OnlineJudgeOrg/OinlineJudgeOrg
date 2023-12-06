@@ -4,7 +4,8 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 import java.util.HashSet;
 
-public class BOJ13241_LeastCommonMultiple {
+// 13241번 최소공배수 : 성공(184ms)
+public class BOJ13241_LeastCommonMultiple { // 1934번 최소공배수 문제와 풀이는 같고, int만 Long으로 변환
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
