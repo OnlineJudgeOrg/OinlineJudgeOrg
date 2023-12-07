@@ -21,29 +21,34 @@ public class bj_1934_LeastCommonMultiple {
 	public static void main(String[] args)throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
+		// a,b 개수 입력 받기
 		int t = Integer.parseInt(br.readLine());
 		
 		StringBuilder sb = new StringBuilder();
 		
+		// a,b 입력 받기
 		for(int i=0; i<t; i++) {
 			String[] ab = br.readLine().split(" ");
 			int a = Integer.parseInt(ab[0]);
 			int b = Integer.parseInt(ab[1]);
 			
+			// 최대공약수 구하기
 			int gcd = GCD(a,b);
-//			System.out.println("gcd : " +gcd);
 			
+			// 최소공배수는 A*B / 최대공약수
 			int lcm = (a*b)/ gcd;
-			//System.out.println("lcm : " +lcm);
 			sb.append(lcm).append('\n');
 		}
 		System.out.println(sb);
 		
 	}
+	// 재귀를 사용해서 최대공약수 구하기
 	public static int GCD(int a, int b) {
+		//r=0일 경우 a가 최대공약수
 		if( b == 0) {
 			return a;
 		}
+		// (a,b) = (b,r);
 		int r = a%b;
 		return GCD(b, r);
 	}
