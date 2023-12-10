@@ -1,4 +1,4 @@
-package ShSeanLee;
+package Bruteforce;
 
 import java.io.*;
 import java.util.ArrayList;
