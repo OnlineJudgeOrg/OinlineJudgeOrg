@@ -1,4 +1,4 @@
-package ShSeanLee;// BOJ2798_BlackJack
+package Bruteforce;// BOJ2798_BlackJack
 
 import java.io.*;
 

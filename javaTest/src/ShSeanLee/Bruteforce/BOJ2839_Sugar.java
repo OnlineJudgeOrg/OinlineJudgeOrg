@@ -1,4 +1,4 @@
-package ShSeanLee;
+package Bruteforce;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
