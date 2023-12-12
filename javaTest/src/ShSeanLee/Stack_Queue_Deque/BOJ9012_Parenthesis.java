@@ -12,44 +12,66 @@ public class BOJ9012_Parenthesis {
         int T = Integer.parseInt(br.readLine());
         for (int i = 0; i < T; i++) {
             String ps = br.readLine();
-            if (ps.substring(0, 1).equals(")")){
-                System.out.println("No");
-                break;
-            } else {
-                checkingVPS(ps);
-            }
+            checkingVPS(ps);
         }
     }
-
+    
     public static void checkingVPS(String ps){
-        Deque<String> stack = new ArrayDeque<>();
-//        Deque<String> stack2 = stack;
-        int rept = ps.length();
-        System.out.println(rept);
-        for (int i = 0; i < rept; i++) {
+        int cnt = 0;
+        for (int i = 0; i < ps.length(); i++) {
             String p = ps.substring(i, i+1);
-            System.out.println(p);
-            if (p.equals("(")){
-                stack.addFirst("(");
+            if(p.equals("(")){
+                cnt++;
             } else {
-                if (stack.isEmpty()){
-                    break;
-                } else {
-                    stack.removeFirst();
-
-                }
+                cnt--;
+            }
+            if (cnt < 0){
+                System.out.println("NO");
+                break;
             }
         }
-        System.out.println("--");
-        System.out.println(stack.toString());
-        answer(stack);
-
-    }
-    public static void answer(Deque stack){
-        if(stack.isEmpty()){
-            System.out.println("Yes");
-        } else {
-            System.out.println("No");
+        if (cnt == 0){
+            System.out.println("YES");
+        } else if (cnt > 0){
+            System.out.println("NO");
         }
+
     }
 }
+    
+//    public static void checkingVPS(String ps){
+//        Deque<String> stack = new ArrayDeque<>();
+////        Deque<String> stack2 = stack;
+//        int rept = ps.length();
+//        System.out.println(rept);
+//        for (int i = 0; i < rept; i++) {
+//            String p = ps.substring(i, i+1);
+//            System.out.println(p);
+//            if (p.equals("(")){
+//                stack.addFirst("(");
+//            } else { // ")"
+//                if (stack.isEmpty()){
+//                    break;
+//                } else {
+//                    if(stack.peekFirst().equals("(")){
+//                        stack.removeFirst();
+//                    }
+//
+//                }
+//            }
+//            System.out.println(stack.toString());
+//
+//        }
+//        System.out.println("--");
+//        System.out.println(stack.toString());
+//        answer(stack);
+//
+//    }
+//    public static void answer(Deque stack){
+//        if(stack.isEmpty()){
+//            System.out.println("Yes");
+//        } else {
+//            System.out.println("No");
+//        }
+//    }
+//}
