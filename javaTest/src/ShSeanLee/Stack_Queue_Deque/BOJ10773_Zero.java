@@ -15,9 +15,9 @@ public class BOJ10773_Zero {
         for (int i = 0; i < K; i++) {
             int num = Integer.parseInt(br.readLine());
             if (num == 0){
-                stack.removeFirst();
+                stack.removeFirst(); // pop
             } else {
-                stack.addFirst(num);
+                stack.addFirst(num); // push
             }
         }
 //        System.out.println(stack.toString());
@@ -26,7 +26,7 @@ public class BOJ10773_Zero {
         int rept = stack.size();
 
         for (int i = 0; i < rept; i++) {
-            sum += stack.removeFirst();
+            sum += stack.removeFirst(); // removeFirst는 Stack에서 가장 위의 수를 return하며 제거한다.
         }
         System.out.println(sum);
 

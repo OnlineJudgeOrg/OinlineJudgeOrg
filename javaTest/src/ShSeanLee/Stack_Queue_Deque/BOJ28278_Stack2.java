@@ -17,7 +17,7 @@ public class BOJ28278_Stack2 {
 //        Stack<Integer> stack = new Stack<>(); // 34% 시간초과
         for (int i = 0; i < N; i++) {
             String tmp = br.readLine();
-            if (tmp.length() >= 2){
+            if (tmp.length() >= 2){ // 길이가 2이면 두번째 숫자를 push해야함
                 StringTokenizer st = new StringTokenizer(tmp);
 //                System.out.println(tmp);
                 String n1 = st.nextToken();

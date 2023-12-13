@@ -13,7 +13,7 @@ public class BOJ4134_NextPrime {
         for (int i = 0; i < numberOfCases; i++) {
 //            int n = Integer.parseInt(br.readLine());
             long n = Long.parseLong(br.readLine());
-            if (n == 0L || n == 1L){
+            if (n == 0L || n == 1L){ // 0과 1일때 모두 2가 나와야함(0, 1은 소수가 아님)
 //                System.out.println(2);
                 sb.append(2).append("\n");
             } else {
@@ -32,7 +32,7 @@ public class BOJ4134_NextPrime {
 
     public static boolean isPrime(long n){
         boolean result = true;
-        for (long i = 2L; i * i <= n; i++) {
+        for (long i = 2L; i * i <= n; i++) { // i * i <= n <동치> i <= Math.sqrt(n)
             if(n % i == 0){
                 result = false;
                 break;

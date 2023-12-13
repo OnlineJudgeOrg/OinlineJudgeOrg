@@ -19,13 +19,13 @@ public class BOJ9012_Parenthesis {
     public static void checkingVPS(String ps){
         int cnt = 0;
         for (int i = 0; i < ps.length(); i++) {
-            String p = ps.substring(i, i+1);
-            if(p.equals("(")){
+            String p = ps.substring(i, i+1); // 한글자씩 떼어냄
+            if(p.equals("(")){ // ( 얘면 +
                 cnt++;
-            } else {
+            } else { // ) 얘면 -
                 cnt--;
             }
-            if (cnt < 0){
+            if (cnt < 0){ // 한번이라도 -가 되는 순간 )가 많아졌다는 소리니 VPS가 아님
                 System.out.println("NO");
                 break;
             }
