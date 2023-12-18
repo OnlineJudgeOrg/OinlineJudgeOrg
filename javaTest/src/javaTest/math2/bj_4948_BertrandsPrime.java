@@ -1,15 +1,11 @@
 package javaTest.math2;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-
-
+import java.io.*;
+import java.util.ArrayDeque;
+import java.util.Deque;
 /*
- * 백준 4948 베르트랑 공준
- * 범위 내부에 있는 소수의 개수 찾기
- * 에라토스테네스의 체 활용 
- * 1이 아닌 수의 배수는 소수가 아니다. 
+ * 백준 4949 균형잡힌 세상
+ * 중괄호 대괄호 매칭
  * 
  */
 public class bj_4948_BertrandsPrime {
@@ -17,47 +13,45 @@ public class bj_4948_BertrandsPrime {
 	public static void main(String[] args)throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		// 입력을 계속 받기 위해 while(true)
+		// 입력 받기
 		while(true) {
 			String input = br.readLine();
-			// 종료 조건
-			if(input.equals("0")) {
+			if(input.equals(".")) {
 				break;
 			}
-			
-			// 범위 설정 
-			int n = Integer.parseInt(input);
-			int m = 2 * n;
-			
-			int result = isPrime(n,m);
-			
-			System.out.println(result);
+			// 괄호 비교 함수 호출
+			boolean result = isBalanced(input);
+			System.out.println(result ? "yes" : "no");
 		}
+
 	}
 	
-	public static int isPrime(int start, int end) {
-		// 0부터 시작하기 때문에 end 까지 확인하기 위해서는 end+1 배열을 생성해야한다.
-		boolean[] numberCheck = new boolean[end +1];
-		Arrays.fill(numberCheck, true);
-		numberCheck[0] = numberCheck[1] = false;
+	public static boolean isBalanced(String input) {
+		// 문자열을 하나씩 비교하기 위해 배열로 변환
+		char[] inputArray = input.toCharArray();
+		Deque<Character> stack = new ArrayDeque<>();
+		// offer : 입력(push)
+		// poll : 출력(pop)
+		// peek : 값만 확인
 		
-		// 2부터 시작해서 제곱근까지만
-		for(int i=2; i*i <= end; i++) {
-			if(numberCheck[i]) {
-				// 배수인 수를 false 처리
-				for(int j=i+i; j<=end; j+=i) {
-					numberCheck[j] = false;
+		for(char ch : inputArray) {
+			// stack에 값 입력
+			if( (ch == '(') || (ch == '[') ) {
+				stack.push(ch);
+			// stack에서 값 출력
+			}else if( (ch == ')') || (ch == ']') ){
+				// stack에 값이 있는지? , 그리고 stack의 값과 입력 값이 매칭이 되는지 확인
+				if(stack.isEmpty() || !isMatchingPair(stack.poll(), ch)) {
+					return false;
 				}
 			}
 		}
-		int cnt = 0;
-		// n보다 큰 소수를 찾아야 하기 때문에 
-		// start 다음 수 부터 찾기 위해 +1을 한다.
-		for(int i=start+1; i<=end; i++) {
-			if(numberCheck[i]) {
-				cnt++;
-			}
-		}
-		return cnt;
+		// stack에 남아있는 값이 없는지 확인
+		return stack.isEmpty();
+	}
+	
+	// 입력 값과 stack의 값이 매칭 되는지 확인
+	public static boolean isMatchingPair(char opening, char closing) {
+		return (opening == '(' && closing == ')') || (opening == '[' && closing == ']');
 	}
 }

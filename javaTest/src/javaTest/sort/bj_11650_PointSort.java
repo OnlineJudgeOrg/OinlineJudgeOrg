@@ -22,6 +22,10 @@ public class bj_11650_PointSort{
     		list.add(inputs);
     	}
     	
+    	for(String[] str : list) {
+    		System.out.println(str[0]);
+    	}
+    	
     	// 정렬하기
     	Collections.sort(list, new Comparator<String[]>() {
     		@Override
@@ -44,7 +48,7 @@ public class bj_11650_PointSort{
     		String y = list.get(i)[1];
     		sb.append(x).append(" ").append(y).append('\n');
     	}
-    	System.out.println(sb);
+    	//System.out.println(sb);
     }
 }
 

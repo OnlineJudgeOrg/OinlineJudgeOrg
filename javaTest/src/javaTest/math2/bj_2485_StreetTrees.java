@@ -26,7 +26,7 @@ public class bj_2485_StreetTrees {
 		}
 		
 		//정렬하기 
-		Collections.sort(locations);
+		//Collections.sort(locations);
 		
 		// 가로수의 간격 구하기
 		ArrayList<Integer> intervals = new ArrayList<>();
@@ -35,7 +35,6 @@ public class bj_2485_StreetTrees {
 		}
 		
 		// 간격들의 최대공약수 구하기
-		
 		int gcd = intervals.get(0);
 		for(int i=1; i<intervals.size(); i++) {
 			int b = intervals.get(i);
