@@ -15,7 +15,7 @@ public class BOJ4949_Balanced {
         StringBuilder sb = new StringBuilder();
         while (true) {
             String sentence = br.readLine();
-            if (sentence.equals(".")){
+            if (sentence.equals(".")){ // 정지조건
                 System.out.println(sb);
                 break;
             } else {
@@ -29,10 +29,10 @@ public class BOJ4949_Balanced {
         Deque<String> stack = new ArrayDeque<>();
         for (int i = 0; i < sentence.length(); i++) {
             String tmp = sentence.substring(i, i + 1);
-            if (tmp.equals("(") || tmp.equals("[")) {
+            if (tmp.equals("(") || tmp.equals("[")) { // 괄호 시작하는 애들은 stack에 넣기
                 stack.addFirst(tmp);
-            } else if (stack.size() != 0){
-                if (tmp.equals(")")) {
+            } else if (stack.size() != 0){ // stack이 비어있지 않을 때는, 닫는 괄호 일때는 스택의 마지막 값이 열린 괄호일때만 제거, 아니면 넣어버리기
+                if (tmp.equals(")")) { 
                     if (stack.peekFirst().equals("(")) {
                         stack.removeFirst();
                     } else {
@@ -45,7 +45,7 @@ public class BOJ4949_Balanced {
                         stack.addFirst(tmp);
                     }
                 }
-            } else if (tmp.equals(")") || tmp.equals("]")) {
+            } else if (tmp.equals(")") || tmp.equals("]")) { //스택이 비어있을 때는 닫는 괄호도 넣기.
                 stack.addFirst(tmp);
                 break;
             }
@@ -53,7 +53,7 @@ public class BOJ4949_Balanced {
         }
 //        System.out.println(stack);
 
-        if (stack.size() == 0){
+        if (stack.size() == 0){ // 빈 스택일때는 yes를 스택이 차있을때눈 no
             return "yes";
         } else {
             return "no";
