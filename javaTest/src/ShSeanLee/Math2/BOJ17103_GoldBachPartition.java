@@ -41,12 +41,12 @@ public class BOJ17103_GoldBachPartition {
 //        for (int i = 0; i < isPrime.length; i++) {
 //            System.out.println(isPrime[i]);
 //        }
-        for (int i = 0; i < (N / 2) + 1; i++) {
+        for (int i = 0; i < (N / 2) + 1; i++) { // 절반까지만 돈다. (짝으로 나오니까)
 //            if (isPrime[i] == true){
 //                primes.add(i);
 //            }
-            if (isPrime[i]){
-                if (isPrime[N - i] == true){
+            if (isPrime[i]){ // i가 소수일때,
+                if (isPrime[N - i] == true){ // N - i도 소수이면, 골드바흐 파티션임
 //                    System.out.println(i);
                     cnt++;
                 }

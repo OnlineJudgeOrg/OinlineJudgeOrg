@@ -43,7 +43,7 @@ public class BOJ13909_ClosingWindows {
 //        }
 //    }
 
-    // 순서대로 갈 것이 아니라, 해당 수가 각각 홀수번나오는지 짝수번 나오는지를 밝힌다. -> 틀린 논리
+    // 순서대로 갈 것이 아니라, 해당 수가 각각 홀수번나오는지 짝수번 나오는지를 밝힌다. - 여기까지는 했는데 홀수번의 특징 파악을 제대로 못해서 실패.
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         long N = Long.parseLong(br.readLine());
@@ -75,7 +75,7 @@ public class BOJ13909_ClosingWindows {
 //            HashSet<Long> set = new HashSet<>();
 ////            int numOfDivisor = 2;
 ////            int tmp = 0;
-//            for (long i = 2; i * i <= N; i++) {
+//            for (long i = 2; i * i <= N; i++) { // 약수를 구하는 과정 -> 쌍으로 집어넣기 (루트 값은 중복되므로 set으로)
 //                if(N % i == 0){
 //                    set.add(i);
 //                    set.add(N/i);
