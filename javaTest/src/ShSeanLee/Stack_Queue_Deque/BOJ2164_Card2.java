@@ -19,15 +19,15 @@ public class BOJ2164_Card2 {
             System.out.println(1);
         } else {
             for (int i = 1; i < N+1; i++) {
-                card.addLast(i);
+                card.addLast(i); // [1, 2, 3, 4 .., N] 의 덱을 만드는 과정.
             }
 
             while (true){
-                card.removeFirst();
-                if (card.size() == 1){
+                card.removeFirst(); // 우선 맨 위에 값 버림
+                if (card.size() == 1){ // 하나 남았을 때는 첫번째 값 출력하고, break
                     System.out.println(card.peekFirst());
                     break;
-                } else {
+                } else { // 여러개 있을 떄는 첫번재 값 제거하고 뒤에다가 둔다.
                     int tmp = card.removeFirst();
                     card.addLast(tmp);
                 }

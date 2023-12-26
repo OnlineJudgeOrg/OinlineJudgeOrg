@@ -21,20 +21,20 @@ public class BOJ11866_Josephus0 {
 //        boolean[] numbers = new boolean[N];
         Deque<Integer> numbers = new ArrayDeque<>();
         for (int i = 1; i < N + 1; i++) {
-            numbers.addLast(i);
+            numbers.addLast(i); // 1~N 덱 구성
         }
         StringBuilder sb = new StringBuilder();
         sb.append("<");
-        while(!numbers.isEmpty()){
+        while(!numbers.isEmpty()){ // 다 제거될 때 가지 반복
             // K-1번 rotate
             for (int i = 0; i < K-1; i++) {
-                numbers.addLast(numbers.removeFirst());
+                numbers.addLast(numbers.removeFirst()); // 첫째 값 제거해서, 마지막에 추가한다.
             }
             // K번째 pop
             sb.append(numbers.removeFirst()).append(", ");
         }
-        sb.deleteCharAt(sb.length() - 1);
-        sb.setCharAt(sb.length() - 1, '>');
+        sb.deleteCharAt(sb.length() - 1); // 마지막 공백 제거
+        sb.setCharAt(sb.length() - 1, '>'); // 마지막 콤마 '>'로 바꾸기
 
         System.out.println(sb);
     }
