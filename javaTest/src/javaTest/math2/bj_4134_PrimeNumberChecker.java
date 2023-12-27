@@ -9,8 +9,6 @@ import java.util.*;
  * 
  * 10^9 이면 int로는 해결되지 않을 것 같다.
  * 
- * 여러 숫자의 최대 공약수를 구한 후 
- * 최대 공약수만큼 간격을 조정한다.
  * 
  */
 public class bj_4134_PrimeNumberChecker {

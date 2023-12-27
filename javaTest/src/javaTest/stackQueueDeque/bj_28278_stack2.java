@@ -17,6 +17,7 @@ import java.util.*;
  * switch 문 비교를 숫자로 변경 -> 시간 초과
  * 
  */
+ 
 public class bj_28278_stack2 {
 
 	public static void main(String[] args)throws Exception {
