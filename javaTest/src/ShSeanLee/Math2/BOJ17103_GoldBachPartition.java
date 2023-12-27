@@ -7,6 +7,8 @@ import java.util.ArrayList;
 /*
 에라스토테네스의 체를 활용하기 (612ms, 480ms - i * i <= N 까지만 탐색시에
  */
+// 리뷰 1. true, false로 초기화하지 않음- 메서드 이름을 직관적으로 isNotPrime 같은 것으로 활용
+// 리뷰 2. 끝에 limit까지 구해놓고, 계속해서 그 배열을 재활용한다.
 
 public class BOJ17103_GoldBachPartition {
     public static void main(String[] args) throws IOException{
