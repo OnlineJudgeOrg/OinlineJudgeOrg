@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
+// 1~N 범위에서 중복없이 M개를 고르는 것
 
 public class BOJ15649_NAndM {
     public static int[] numbers;
@@ -40,10 +41,10 @@ public class BOJ15649_NAndM {
 
         for (int i = 0; i < N; i++) {
             if (!visited[i]){
-                visited[i] = true;
+                visited[i] = true; // 중복 된 두 값을 선택하지 않기 위한 장치
                 numbers[depth] = i + 1;
                 DFS(N, M, depth + 1);
-                visited[i] = false;
+                visited[i] = false; // 임시로 true했던 애들 다시 false로 바꾸기
             }
         }
 

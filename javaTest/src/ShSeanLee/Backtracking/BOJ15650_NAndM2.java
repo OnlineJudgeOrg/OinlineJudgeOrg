@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
+// 1~N 범위에서 중복없이 M개를 고르는 것. 단, 뒤에 나온수는 앞에 나온수보다 커야 함 
 
 public class BOJ15650_NAndM2 {
 //    public static boolean[] visited;
@@ -28,7 +29,7 @@ public class BOJ15650_NAndM2 {
     }
 
 
-    public static void DFS(int n, int depth) {
+    public static void DFS(int n, int depth) { // n은 시작 숫자
 
         if (depth == M) {
             for (int v : numbers) {

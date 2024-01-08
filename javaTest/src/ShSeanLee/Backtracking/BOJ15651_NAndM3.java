@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
+
+// 1~N 범위에서 M개를 고르는 것. 중복 가능 
+
 public class BOJ15651_NAndM3 {
     public static int N, M;
     public static StringBuilder sb = new StringBuilder();
