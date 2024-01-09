@@ -61,7 +61,7 @@ public class BOJ24479_DFS1 {
 //        }
         for (int i = 1; i < N + 1; i++) {
 //            System.out.println(result[i]);
-            sb.append(result[i]).append("\n");
+            sb.append(result[i]).append("\n"); // 순서대로 뽑는다.
         }
         System.out.println(sb);
 
