@@ -43,7 +43,7 @@ public class BOJ24479_DFS1 {
         }
         // 정렳하기
         for (int i = 1; i < N + 1; i++) {
-            Collections.sort(list[i]);
+            Collections.sort(list[i], Collections.reverseOrder());
             System.out.print(i);
             System.out.print(": "); // 이해를 위한 표시
             System.out.println(list[i]);
