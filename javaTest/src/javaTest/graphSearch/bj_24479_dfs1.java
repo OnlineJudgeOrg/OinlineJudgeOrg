@@ -3,10 +3,8 @@ package javaTest.graphSearch;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.StringTokenizer;
 
 public class bj_24479_dfs1 {
@@ -22,7 +20,7 @@ public class bj_24479_dfs1 {
 		
 		// 정점 배열 초기화
 		ArrayList<Integer>[] vertexArray = new ArrayList[vertexNumber+1];
-		for(int i=0; i<vertexNumber; i++) {
+		for(int i=0; i<=vertexNumber; i++) {
 			vertexArray[i] = new ArrayList<Integer>();
 		}
 		
@@ -42,9 +40,9 @@ public class bj_24479_dfs1 {
             Collections.sort(vertexArray[endEdge]);
 		}
 		
-		for(int i=0; i<=vertexNumber; i++) {
-			System.out.println(vertexArray[i]);
-		}
+//		for(int i=0; i<=vertexNumber; i++) {
+//			System.out.println(vertexArray[i]);
+//		}
 		
 		int cnt = 1;
 		// 이제부터 dfs() 시작한다.
