@@ -11,6 +11,8 @@ import java.util.StringTokenizer;
 rotate를 구현하고, sb를 활용하여 원모양 queue 구현 (160ms)
  */
 
+// 리뷰 1: deqeue에 다 꺼낼때 한개 남았을 때, 문제가 생긴다 -> 얘는 while 루프에 1보다 클때로 두고선, 1일 때는 자동으로 해결되게 한다.
+
 public class BOJ11866_Josephus0 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
