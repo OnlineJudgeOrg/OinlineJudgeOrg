@@ -19,8 +19,7 @@ public class BOJ14889_StartAndLink {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         N = Integer.parseInt(br.readLine());
-//        StringTokenizer st = new StringTokenizer(br.readLine());
-        // 그래프 만들 때부터, (i, j), (j, i) 값을 합한 것을 넣어버리기.
+        // 점수판 만들기(stats)
         stats = new int[N][N];
         for (int i = 0; i < N; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
@@ -38,9 +37,7 @@ public class BOJ14889_StartAndLink {
         dfs(0, 0);
 
         // 두개의 셋에서 둘씩 뽑아서 순서쌍 만들기
-
-
-
+        
         // abs(sum(set1) - sum(set2))
         System.out.println(m);
 
@@ -62,7 +59,7 @@ public class BOJ14889_StartAndLink {
             int team1Score = 0;
             int team2Score = 0;
             for (int i = 0; i < N - 1; i++) {
-                for (int j = i + 1; j < N; j++) {
+                for (int j = i + 1; j < N; j++) { // 투 포인터
                     if (visited[i] && visited[j]) { //  팀 구별의 아이디어
                         team1Score += stats[i][j];
                         team1Score += stats[j][i];
@@ -78,7 +75,7 @@ public class BOJ14889_StartAndLink {
             return;
         }
 
-        for (int i = idx; i < N; i++) { // 재귀로 들어가서, 처음부터 도는 것이 아니라, 지금까지 안나온 애들(조합으로 가야함)
+        for (int i = idx; i < N; i++) { // 재귀로 들어가서 처음부터 도는 것이 아니라, 지금까지 안나온 애들(조합으로 가야함)
             if (!visited[i]) {
                 visited[i] = true;
 //                team1[depth] = i;

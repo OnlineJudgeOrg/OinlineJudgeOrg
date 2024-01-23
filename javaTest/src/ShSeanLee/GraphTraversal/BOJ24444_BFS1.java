@@ -47,13 +47,14 @@ public class BOJ24444_BFS1 {
             order[i] = 0;
         }
 
-        // 시작 노드는 담아 둔다.
+        // 시작 노드는 큐에 담아 둔다. visited의 해당 값은 true로 바꿔준다.
         visited[R] = true;
         queue.addLast(R);
 //        System.out.println(queue);
         int idx = 1;
         order[R] = idx;
         idx++;
+
         while (!queue.isEmpty()) {
             // 큐에 있는 맨 앞 수 pop
             Integer n0 = queue.removeFirst();
@@ -62,12 +63,12 @@ public class BOJ24444_BFS1 {
 
             // 인접한 노드를 큐에 담기
             for (int i = 0; i < graphs[n0].size(); i++) {
-                int n = graphs[n0].get(i);
-                if (!visited[n]) {
+                int n = graphs[n0].get(i); // 
+                if (!visited[n]) { // 방문 안한 것만 true표시하고
                     visited[n] = true;
                     order[n] = idx;
 //                    System.out.println(n);
-                    queue.addLast(n);
+                    queue.addLast(n); // 큐에 담기
                     idx++;
                 }
             }
