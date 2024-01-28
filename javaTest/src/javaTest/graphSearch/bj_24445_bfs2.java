@@ -10,6 +10,7 @@ import java.util.Comparator;
 import java.util.Deque;
 import java.util.StringTokenizer;
 
+//token update
 public class bj_24445_bfs2 {
 	
 	public static ArrayList<Integer>[] array;
