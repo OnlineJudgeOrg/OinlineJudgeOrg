@@ -27,9 +27,9 @@ public class BOJ2606_Virus {
         for (int i = 0; i < numOfComputer + 1; i++) {
             graphs[i] = new ArrayList<>();
         }
-        result = new HashSet<>();
+        result = new HashSet<>(); // set에 담는다.
 
-
+        // 그래프 만들기
         for (int i = 0; i < numOfConnected; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int tmp1 = Integer.parseInt(st.nextToken());
@@ -40,10 +40,11 @@ public class BOJ2606_Virus {
             graphs[tmp2].add(tmp1);
         }
 
+        // 정렬하기
         for (int i = 0; i < graphs.length; i++) {
             Collections.sort(graphs[i]);
         }
-
+        // 무조건 1부터 시작.
         visited[1] = true;
 
         dfs(1);
@@ -59,8 +60,9 @@ public class BOJ2606_Virus {
             if (!visited[graphs[s].get(i)]){
 //                System.out.println(graphs[s].get(i));
                 visited[graphs[s].get(i)] = true;
-                result.add(graphs[s].get(i));
+                result.add(graphs[s].get(i)); // 방문한 노드를 set에 담아준다.
                 dfs(graphs[s].get(i));
+                // false로 바꿔주는 동작 없음. - 한번 깊숙하게 방문했다가 나왔던 애들을 다시 방문할 필요 없음.
             }
         }
 
