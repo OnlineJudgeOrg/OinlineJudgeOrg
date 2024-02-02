@@ -15,6 +15,7 @@ public class BOJ2606_Virus {
     public static boolean[] visited;
     public static ArrayList<Integer>[] graphs;
     public static HashSet<Integer> result;
+    public static ArrayList<Integer> result2;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -28,6 +29,8 @@ public class BOJ2606_Virus {
             graphs[i] = new ArrayList<>();
         }
         result = new HashSet<>(); // set에 담는다.
+        result2 = new ArrayList<>();
+
 
         // 그래프 만들기
         for (int i = 0; i < numOfConnected; i++) {
@@ -48,7 +51,11 @@ public class BOJ2606_Virus {
         visited[1] = true;
 
         dfs(1);
-        System.out.println(result.size());
+//        System.out.println(result.size());
+
+        for (int i = 0; i < result.size(); i++) {
+            System.out.println(result2.get(i));
+        }
 
 
 
@@ -61,6 +68,7 @@ public class BOJ2606_Virus {
 //                System.out.println(graphs[s].get(i));
                 visited[graphs[s].get(i)] = true;
                 result.add(graphs[s].get(i)); // 방문한 노드를 set에 담아준다.
+                result2.add(graphs[s].get(i)); // 방문한 노드를 set에 담아준다.
                 dfs(graphs[s].get(i));
                 // false로 바꿔주는 동작 없음. - 한번 깊숙하게 방문했다가 나왔던 애들을 다시 방문할 필요 없음.
             }
