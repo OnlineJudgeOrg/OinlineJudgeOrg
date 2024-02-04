@@ -5,11 +5,15 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
+// 1700~1800ms의 시간초가 나오는 원인 파악 필요 -> 같아보이는 다른 코드들은 300ms
+
 public class BOJ9184_ExecuteFunction {
     public static int result = 0;
+    public static int[][][] dp;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
+        dp = new int[51][51][51];
         while (true) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int a = Integer.parseInt(st.nextToken());
@@ -23,7 +27,7 @@ public class BOJ9184_ExecuteFunction {
             }
 
             String tmp = String.format("w(%d, %d, %d) = %d", a, b, c, result);
-            System.out.println(tmp);
+//            System.out.println(tmp);
             sb.append(tmp).append("\n");
         }
         System.out.println(sb);
@@ -35,13 +39,16 @@ public class BOJ9184_ExecuteFunction {
     public static int function1(int a, int b, int c) {
         if (a <= 0 || b <= 0 || c <= 0) {
             return 1;
+        } else if (dp[a][b][c] != 0) {
+            return dp[a][b][c];
         } else if (a > 20 || b > 20 || c > 20) {
-            return function1(20, 20, 20);
+            dp[a][b][c] = function1(20, 20, 20);
         } else if (a < b && b < c) {
-            return function1(a, b, c - 1) + function1(a, b - 1, c - 1) - function1(a, b - 1, c);
+            dp[a][b][c] = function1(a, b, c - 1) + function1(a, b - 1, c - 1) - function1(a, b - 1, c);
         } else {
-            return function1(a - 1, b, c) + function1(a - 1, b - 1, c) + function1(a - 1, b , c - 1) - function1(a - 1, b - 1, c - 1);
+            dp[a][b][c] = function1(a - 1, b, c) + function1(a - 1, b - 1, c) + function1(a - 1, b, c - 1) - function1(a - 1, b - 1, c - 1);
         }
+        return dp[a][b][c];
     }
 
 }
