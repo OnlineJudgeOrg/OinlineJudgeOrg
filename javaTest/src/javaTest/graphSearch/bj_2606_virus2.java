@@ -1,5 +1,4 @@
 package javaTest.graphSearch;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,11 +10,14 @@ public class bj_2606_virus2 {
 	public static ArrayList<Integer>[] computerArray ;
 	public static boolean[] checkComputerArray;
 	
+	public static int numberOfComputer;
+	public static int cnt = 0;
+	
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		int numberOfComputer = Integer.parseInt(br.readLine());
+		numberOfComputer = Integer.parseInt(br.readLine());
 		int numberOfLink = Integer.parseInt(br.readLine());
 		
 		computerArray = new ArrayList[numberOfComputer+1];
@@ -34,33 +36,33 @@ public class bj_2606_virus2 {
 			computerArray[tmp1].add(tmp2);
 			computerArray[tmp2].add(tmp1);
 		}
+
+		int depth = 0;
+		int idx = 1;
+		checkComputerArray[1] = true;
 		
-		ArrayDeque<Integer> deque = new ArrayDeque<Integer>();
-		deque.addLast(1);
-		
-		int result = bfs(deque);
+		dfs(depth, idx);
 		// 1을 제외하고 감염되는 컴퓨터의 수
-		System.out.println(result-1);
-		
+		System.out.println(cnt);
 	}
-	public static int bfs(ArrayDeque<Integer> deque) {
-		int cnt = 0;
-		
-		while(!deque.isEmpty()) {
-			int popIdx = deque.pollFirst();
+	private static void dfs(int depth, int idx) {
+		if(depth == numberOfComputer) {
+			return;
+		}
+		// 탐색할 수 있는 모든 조합
+		for(int i=0; i<computerArray[idx].size(); i++) {
+			int tmp = computerArray[idx].get(i);
 			
-			if(!checkComputerArray[popIdx]) {
-//				System.out.println("popIdx : " + popIdx);
+			if(checkComputerArray[tmp] == false) {
+				checkComputerArray[tmp] = true;
+				dfs(depth+1, tmp);
+//				checkComputerArray[tmp] = false;
 				cnt++;
-				for(int i=0; i<computerArray[popIdx].size(); i++) {
-					deque.addLast(computerArray[popIdx].get(i));
-					
-				}
-				checkComputerArray[popIdx] = true;
 			}
-			
 		}
 		
-		return cnt;
+		return;
 	}
+	
 }
+
