@@ -7,16 +7,15 @@ import java.util.*;
 
 
 public class BOJ1260_DFS_BFS {
-    public static int numberOfNode;
+    public static int numberOfNode; 
     public static int numberOfEdge;
-    public static int vertex;
+    public static int vertex; // 시작 정점
     public static ArrayList<Integer>[] graphs;
-    public static boolean[] visited;
-    public static Deque<Integer> queue = new ArrayDeque<>();
-
+    public static boolean[] visited; // dfs, bfs 공통 활용
+    public static Deque<Integer> queue = new ArrayDeque<>(); // bfs를 위한 queue
     public static ArrayList<Integer> dfsResult = new ArrayList<>();
     public static ArrayList<Integer> bfsResult = new ArrayList<>();
-    public static StringBuilder dfsOrder = new StringBuilder();
+    public static StringBuilder dfsOrder = new StringBuilder(); // 정답 출력용
     public static StringBuilder bfsOrder = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
@@ -56,7 +55,7 @@ public class BOJ1260_DFS_BFS {
 //        System.out.println(dfsOrder);
 //        System.out.println(dfsResult.toString());
         for (int i = 0; i < dfsResult.size(); i++) {
-            dfsOrder.append(dfsResult.get(i)).append(" ");
+            dfsOrder.append(dfsResult.get(i)).append(" "); // DFS 출력
         }
         System.out.println(dfsOrder);
 
@@ -84,7 +83,7 @@ public class BOJ1260_DFS_BFS {
 //                System.out.println(tmp);
                 visited[tmp] = true;
                 dfsResult.add(tmp);
-                DFS(tmp, depth + 1);
+                DFS(tmp, depth + 1); // 최초 방문 후 재방문 안하므로 false 없음
             }
         }
 //        }

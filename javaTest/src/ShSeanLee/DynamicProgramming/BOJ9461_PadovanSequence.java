@@ -23,7 +23,7 @@ public class BOJ9461_PadovanSequence {
 
     // 점화식 P(n+1) = P(n-1) + P(n-2)
     public static long padovan(int n) {
-        if(dp[n] == 0){
+        if(dp[n] == 0){ // memorization 활용
             dp[n] = padovan(n - 2) + padovan(n - 3);
         }
         return dp[n];
