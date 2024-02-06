@@ -13,7 +13,7 @@ public class BOJ9184_ExecuteFunction {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
-        dp = new int[51][51][51];
+        dp = new int[51][51][51]; // 0~50, 마이너스는 결과값이 다 1이므로 담아둘 필요 없음
         while (true) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int a = Integer.parseInt(st.nextToken());
@@ -36,13 +36,13 @@ public class BOJ9184_ExecuteFunction {
 
     }
 
-    public static int function1(int a, int b, int c) {
+    public static int function1(int a, int b, int c) { // memorization을 활용한 풀이
         if (a <= 0 || b <= 0 || c <= 0) {
             return 1;
         } else if (dp[a][b][c] != 0) {
             return dp[a][b][c];
         } else if (a > 20 || b > 20 || c > 20) {
-            dp[a][b][c] = function1(20, 20, 20);
+            dp[a][b][c] = function1(20, 20, 20); 
         } else if (a < b && b < c) {
             dp[a][b][c] = function1(a, b, c - 1) + function1(a, b - 1, c - 1) - function1(a, b - 1, c);
         } else {
