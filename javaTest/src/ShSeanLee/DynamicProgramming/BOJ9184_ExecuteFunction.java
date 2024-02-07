@@ -42,7 +42,8 @@ public class BOJ9184_ExecuteFunction {
         } else if (dp[a][b][c] != 0) {
             return dp[a][b][c];
         } else if (a > 20 || b > 20 || c > 20) {
-            dp[a][b][c] = function1(20, 20, 20); 
+//            dp[a][b][c] = function1(20, 20, 20);
+            return dp[20][20][20] = function1(20, 20, 20);
         } else if (a < b && b < c) {
             dp[a][b][c] = function1(a, b, c - 1) + function1(a, b - 1, c - 1) - function1(a, b - 1, c);
         } else {
