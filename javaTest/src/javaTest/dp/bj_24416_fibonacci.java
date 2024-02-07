@@ -14,7 +14,7 @@ public class bj_24416_fibonacci {
 		int n = Integer.parseInt(br.readLine());
 		fib(n);
 		fibonacci(n);
-		System.out.println(cnt1 + "" + cnt2);
+		System.out.println(cnt1 + " " + cnt2);
 	}
 	
 	public static int fib(int n) {

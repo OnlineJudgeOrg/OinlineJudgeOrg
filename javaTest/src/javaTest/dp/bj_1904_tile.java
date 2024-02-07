@@ -28,7 +28,7 @@ public class bj_1904_tile {
 	}
 	public static int Tile(int n) {
 		if(dp[n] == -1) {
-			dp[n] = (Tile(n-1) + Tile((n-2))) % 15746;
+			dp[n] = (Tile(n-1) + Tile(n-2)) % 15746;
 		}
 		return dp[n];
 	}
