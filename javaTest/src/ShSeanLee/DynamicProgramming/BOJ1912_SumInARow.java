@@ -14,7 +14,7 @@ public class BOJ1912_SumInARow {
         int maxSum = 0;
         int tempSum = 0;
         ArrayList<Integer> manipulatedArray = new ArrayList<>();
-//        boolean previousMinus = false; // 직전이 마이너스냐에 따라서 새로 수열을 자르려고 한 풀이(잘못됨)
+//        boolean previousMinus = false; // 직전이 마이너스냐에 따라서 새로 수열을 자르려고 한 풀이(잘못됨) 10, || -4, || 15, || -35, 33, -1 -> 마이너스와 상관없이 잘릴 수 있음
         // 핵심 아이디어 -> 양수는 앞뒤 인접한 애들을 끌어들이는게 무조건 이득이므로 합쳐버린다. -> 2% 시간초과
         for (int i = 0; i < n; i++) {
             int tmp = Integer.parseInt(st.nextToken());
