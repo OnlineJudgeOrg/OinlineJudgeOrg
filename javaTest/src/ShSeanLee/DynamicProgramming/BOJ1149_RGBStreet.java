@@ -31,7 +31,7 @@ public class BOJ1149_RGBStreet {
                 1000 1000 999
                  */
                 int tmp = Integer.MAX_VALUE;
-                for (int k = 0; k < 3; k++) { // 
+                for (int k = 0; k < 3; k++) { // RGB if-else 대신해서, for문으로 구하는 부분
                     if (k != j) {
                         tmp = Math.min(tmp, costs[i - 1][k]); // ex: 0번째(k) 열이 아닌 이전 행의 1, 2번째 열의 최솟값
                     }
