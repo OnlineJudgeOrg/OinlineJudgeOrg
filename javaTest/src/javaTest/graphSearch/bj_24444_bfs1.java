@@ -54,6 +54,7 @@ public class bj_24444_bfs1 {
 		System.out.println(sb);
 		
 	}
+	
 	public static void bfs(Deque<Integer> deque) {
 		// 
 		int cnt = 1;
