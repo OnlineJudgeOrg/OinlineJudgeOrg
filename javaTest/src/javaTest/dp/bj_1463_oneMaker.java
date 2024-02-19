@@ -19,6 +19,9 @@ public class bj_1463_oneMaker {
 	 * 5. dp[10-1]의 값을 채운다. 
 	 * 
 	 * 해당 과정을 반복한다. 
+	 * 
+	 * 94% 런타임 에러
+	 * 
 	 */
 
 	public static int[] dp;
@@ -33,15 +36,15 @@ public class bj_1463_oneMaker {
 		dp = new int [targetNumber+1];
 		
 		dp[0] = 0;
-		dp[1] = 0;
-		dp[2] = 1;
-		dp[3] = 1;
+//		dp[1] = 0;
+//		dp[2] = 1;
+//		dp[3] = 1;
 //		dp[4] = 2;
 //		dp[5] = 3;
-		dp[6] = 2;
+//		dp[6] = 2;
 		
 		int idx = 0;
-		for(int i=4; i<dp.length; i++) {
+		for(int i=1; i<dp.length; i++) {
 			int cnt = 0;
 			int tmp = i;
 			int idx3 = 0;
