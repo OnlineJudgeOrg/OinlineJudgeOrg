@@ -69,7 +69,7 @@ public class BOJ1463_MakingOne {
         if (dp[N] == null) {
             // 6으로 나눠지는 경우
             if (N % 6 == 0) {
-                dp[N] = Math.min(recur(N - 1), Math.min(recur(N / 3), recur(N / 2))) + 1;
+                dp[N] = Math.min(recur(N - 1), Math.min(recur(N / 3), recur(N / 2))) + 1; // 세개의 최솟값
             }
             // 3으로만 나눠지는 경우
             else if (N % 3 == 0) {
