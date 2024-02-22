@@ -18,16 +18,15 @@ public class BOJ1012_Cabbage {
             StringTokenizer st = new StringTokenizer(br.readLine());
 
 
-            int numberOfColums = Integer.parseInt(st.nextToken());
-            int numberOfRows = Integer.parseInt(st.nextToken());
-            int numberOfCabbages =  Integer.parseInt(st.nextToken());
-
-            int[][] isThereCabbage = new int[numberOfColums][numberOfRows];
+            int numberOfColums = Integer.parseInt(st.nextToken()); // 가로
+            int numberOfRows = Integer.parseInt(st.nextToken()); // 새로
+            int numberOfCabbages =  Integer.parseInt(st.nextToken()); // 배추 개수 
+            int[][] isThereCabbage = new int[numberOfColums][numberOfRows]; // 맵
             boolean[][] visited = new boolean[numberOfColums][numberOfRows];
 
 
 
-            for (int i = 0; i < numberOfCabbages; i++) {
+            for (int i = 0; i < numberOfCabbages; i++) { // 그래프 만드는 과정
                 StringTokenizer st2 = new StringTokenizer(br.readLine());
                 int x = Integer.parseInt(st2.nextToken());
                 int y = Integer.parseInt(st2.nextToken());
@@ -38,7 +37,7 @@ public class BOJ1012_Cabbage {
 
             for (int i = 0; i < numberOfColums; i++) {
                 for (int j = 0; j < numberOfRows; j++) {
-                    if(isThereCabbage[i][j] == 1 && !visited[i][j]) {
+                    if(isThereCabbage[i][j] == 1 && !visited[i][j]) { // 그 자리에 배추가 있고, 방문하지 않았을 때(이어진 배추다발의 시작점을 찾았을 때)
                         visited[i][j] = true;
                         numberOfWorms++;
                         dfs(i, j, numberOfColums, numberOfRows, isThereCabbage, visited);
@@ -58,7 +57,7 @@ public class BOJ1012_Cabbage {
             int ny = y + dy[i];
 
             if((nx >= 0) && (ny >= 0) && (nx < numberOfColums) && (ny < numberOfRows)){
-                if (isThereCabbage[nx][ny] == 1 & !visited[nx][ny]){
+                if (isThereCabbage[nx][ny] == 1 & !visited[nx][ny]){ // 상하좌우 이동 후에 장소에 배추가 있고, 방문하지 않았을 때
                     visited[nx][ny] = true;
                     dfs(nx, ny, numberOfColums, numberOfRows, isThereCabbage, visited);
                 }
